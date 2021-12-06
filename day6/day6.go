@@ -30,12 +30,7 @@ func readInput(filename string) map[int]int {
 		fields := strings.Split(text, ",")
 		for _, field := range fields {
 			fish, _ := strconv.Atoi(field)
-			v, ok := fishes[fish]
-			if ok {
-				fishes[fish] = v + 1
-			} else {
-				fishes[fish] = 1
-			}
+			addFish(&fishes, fish, 1)
 		}
 	}
 
